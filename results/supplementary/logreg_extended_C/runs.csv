@@ -1,0 +1,6 @@
+run_id,model,condition,seed,n_channels,params,val_macro_f1,test_accuracy,test_macro_f1,latency_median_ms,latency_p95_ms,e2e_latency_median_ms,e2e_latency_p95_ms,best_epoch,train_seconds
+logreg_acc_s0,logreg,acc,0,6,4614,0.57631,0.53037,0.47838,nan,nan,nan,nan,,4.89
+logreg_gyro_s0,logreg,gyro,0,3,2310,0.29235,0.28334,0.27079,nan,nan,nan,nan,,0.78
+logreg_acc_gyro_s0,logreg,acc_gyro,0,9,6918,0.58459,0.56057,0.52853,nan,nan,nan,nan,,6.95
+logreg_acc_raw3_s0,logreg,acc_raw3,0,3,2310,0.57938,0.5073,0.45039,nan,nan,nan,nan,,3.01
+logreg_acc_raw3_gyro_s0,logreg,acc_raw3_gyro,0,6,4614,0.58453,0.54055,0.50274,nan,nan,nan,nan,,5.09

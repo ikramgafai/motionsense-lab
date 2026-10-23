@@ -1,0 +1,55 @@
+[cnn_acc_s0] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9125 macroF1=0.9118 params=24582 best_epoch=7
+[cnn_acc_s1] channels=6 train/val/test=5595/1757/2947
+    test acc=0.8945 macroF1=0.8936 params=24582 best_epoch=3
+[cnn_acc_s2] channels=6 train/val/test=5595/1757/2947
+    test acc=0.8989 macroF1=0.8973 params=24582 best_epoch=1
+[cnn_acc_s3] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9033 macroF1=0.9041 params=24582 best_epoch=1
+[cnn_acc_s4] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9087 macroF1=0.9079 params=24582 best_epoch=11
+[cnn_gyro_s0] channels=3 train/val/test=5595/1757/2947
+    test acc=0.7852 macroF1=0.7896 params=23910 best_epoch=33
+[cnn_gyro_s1] channels=3 train/val/test=5595/1757/2947
+    test acc=0.7971 macroF1=0.8010 params=23910 best_epoch=38
+[cnn_gyro_s2] channels=3 train/val/test=5595/1757/2947
+    test acc=0.7913 macroF1=0.7941 params=23910 best_epoch=31
+[cnn_gyro_s3] channels=3 train/val/test=5595/1757/2947
+    test acc=0.7625 macroF1=0.7658 params=23910 best_epoch=6
+[cnn_gyro_s4] channels=3 train/val/test=5595/1757/2947
+    test acc=0.7954 macroF1=0.7974 params=23910 best_epoch=20
+[cnn_acc_gyro_s0] channels=9 train/val/test=5595/1757/2947
+    test acc=0.9182 macroF1=0.9181 params=25254 best_epoch=21
+[cnn_acc_gyro_s1] channels=9 train/val/test=5595/1757/2947
+    test acc=0.9080 macroF1=0.9082 params=25254 best_epoch=3
+[cnn_acc_gyro_s2] channels=9 train/val/test=5595/1757/2947
+    test acc=0.9077 macroF1=0.9083 params=25254 best_epoch=3
+[cnn_acc_gyro_s3] channels=9 train/val/test=5595/1757/2947
+    test acc=0.9179 macroF1=0.9181 params=25254 best_epoch=4
+[cnn_acc_gyro_s4] channels=9 train/val/test=5595/1757/2947
+    test acc=0.9264 macroF1=0.9265 params=25254 best_epoch=2
+[cnn_acc_raw3_s0] channels=3 train/val/test=5595/1757/2947
+    test acc=0.9067 macroF1=0.9069 params=23910 best_epoch=4
+[cnn_acc_raw3_s1] channels=3 train/val/test=5595/1757/2947
+    test acc=0.8707 macroF1=0.8701 params=23910 best_epoch=8
+[cnn_acc_raw3_s2] channels=3 train/val/test=5595/1757/2947
+    test acc=0.9118 macroF1=0.9111 params=23910 best_epoch=11
+[cnn_acc_raw3_s3] channels=3 train/val/test=5595/1757/2947
+    test acc=0.8575 macroF1=0.8569 params=23910 best_epoch=2
+[cnn_acc_raw3_s4] channels=3 train/val/test=5595/1757/2947
+    test acc=0.9040 macroF1=0.9042 params=23910 best_epoch=8
+[cnn_acc_raw3_gyro_s0] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9172 macroF1=0.9182 params=24582 best_epoch=15
+[cnn_acc_raw3_gyro_s1] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9084 macroF1=0.9081 params=24582 best_epoch=7
+[cnn_acc_raw3_gyro_s2] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9230 macroF1=0.9221 params=24582 best_epoch=9
+[cnn_acc_raw3_gyro_s3] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9155 macroF1=0.9145 params=24582 best_epoch=9
+[cnn_acc_raw3_gyro_s4] channels=6 train/val/test=5595/1757/2947
+    test acc=0.9192 macroF1=0.9187 params=24582 best_epoch=13
+cnn    fusion vs accelerometer (9 vs 6 ch)           seed_dF1=+0.0129 subj_d=+0.0160 CI=[+0.0015,+0.0373] p=0.0977 subj a>b 7/9
+cnn    fusion vs gyroscope (9 vs 3 ch)               seed_dF1=+0.1263 subj_d=+0.1199 CI=[+0.0683,+0.1619] p=0.0117 subj a>b 8/9
+cnn    total_acc+gyro vs total_acc (6 vs 3 ch)       seed_dF1=+0.0264 subj_d=+0.0332 CI=[+0.0053,+0.0626] p=0.1094 subj a>b 6/9
+cnn    total_acc vs gyro (3 vs 3 ch)                 seed_dF1=+0.1003 subj_d=+0.0867 CI=[+0.0318,+0.1356] p=0.0273 subj a>b 7/9
+cnn    adding derived body_acc (6 vs 3 ch)           seed_dF1=+0.0131 subj_d=+0.0172 CI=[-0.0062,+0.0432] p=0.5703 subj a>b 4/9

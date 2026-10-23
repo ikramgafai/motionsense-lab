@@ -1,0 +1,105 @@
+train (7352, 9, 128) subjects=21 | test (2947, 9, 128) subjects=9
+[logreg_acc_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.5439 macroF1=0.5036 params=4614 best_epoch=-
+[cnn_acc_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.8924 macroF1=0.8925 params=24582 best_epoch=16
+[cnn_acc_s1] channels=6 train/val/test=5657/1695/2947
+    test acc=0.8996 macroF1=0.9005 params=24582 best_epoch=19
+[cnn_acc_s2] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9026 macroF1=0.9018 params=24582 best_epoch=7
+[cnn_acc_s3] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9033 macroF1=0.9029 params=24582 best_epoch=3
+[cnn_acc_s4] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9131 macroF1=0.9140 params=24582 best_epoch=17
+[logreg_gyro_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.3051 macroF1=0.2916 params=2310 best_epoch=-
+[cnn_gyro_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.7852 macroF1=0.7904 params=23910 best_epoch=34
+[cnn_gyro_s1] channels=3 train/val/test=5657/1695/2947
+    test acc=0.7587 macroF1=0.7612 params=23910 best_epoch=16
+[cnn_gyro_s2] channels=3 train/val/test=5657/1695/2947
+    test acc=0.8005 macroF1=0.8032 params=23910 best_epoch=19
+[cnn_gyro_s3] channels=3 train/val/test=5657/1695/2947
+    test acc=0.7974 macroF1=0.8018 params=23910 best_epoch=33
+[cnn_gyro_s4] channels=3 train/val/test=5657/1695/2947
+    test acc=0.7784 macroF1=0.7821 params=23910 best_epoch=21
+[logreg_acc_gyro_s0] channels=9 train/val/test=5657/1695/2947
+    test acc=0.5606 macroF1=0.5285 params=6918 best_epoch=-
+[cnn_acc_gyro_s0] channels=9 train/val/test=5657/1695/2947
+    test acc=0.9203 macroF1=0.9210 params=25254 best_epoch=30
+[cnn_acc_gyro_s1] channels=9 train/val/test=5657/1695/2947
+    test acc=0.9128 macroF1=0.9157 params=25254 best_epoch=15
+[cnn_acc_gyro_s2] channels=9 train/val/test=5657/1695/2947
+    test acc=0.9050 macroF1=0.9046 params=25254 best_epoch=2
+[cnn_acc_gyro_s3] channels=9 train/val/test=5657/1695/2947
+    test acc=0.9087 macroF1=0.9083 params=25254 best_epoch=6
+[cnn_acc_gyro_s4] channels=9 train/val/test=5657/1695/2947
+    test acc=0.9091 macroF1=0.9097 params=25254 best_epoch=1
+[logreg_acc_raw3_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.5073 macroF1=0.4504 params=2310 best_epoch=-
+[cnn_acc_raw3_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.8850 macroF1=0.8834 params=23910 best_epoch=3
+[cnn_acc_raw3_s1] channels=3 train/val/test=5657/1695/2947
+    test acc=0.9036 macroF1=0.9030 params=23910 best_epoch=10
+[cnn_acc_raw3_s2] channels=3 train/val/test=5657/1695/2947
+    test acc=0.8853 macroF1=0.8852 params=23910 best_epoch=19
+[cnn_acc_raw3_s3] channels=3 train/val/test=5657/1695/2947
+    test acc=0.9077 macroF1=0.9072 params=23910 best_epoch=10
+[cnn_acc_raw3_s4] channels=3 train/val/test=5657/1695/2947
+    test acc=0.8748 macroF1=0.8755 params=23910 best_epoch=12
+[logreg_acc_raw3_gyro_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.5467 macroF1=0.5149 params=4614 best_epoch=-
+[cnn_acc_raw3_gyro_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9220 macroF1=0.9215 params=24582 best_epoch=8
+[cnn_acc_raw3_gyro_s1] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9213 macroF1=0.9207 params=24582 best_epoch=11
+[cnn_acc_raw3_gyro_s2] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9145 macroF1=0.9141 params=24582 best_epoch=7
+[cnn_acc_raw3_gyro_s3] channels=6 train/val/test=5657/1695/2947
+    test acc=0.8999 macroF1=0.8988 params=24582 best_epoch=9
+[cnn_acc_raw3_gyro_s4] channels=6 train/val/test=5657/1695/2947
+    test acc=0.9070 macroF1=0.9063 params=24582 best_epoch=4
+[benchmark] round 1/3 done
+[benchmark] round 2/3 done
+[benchmark] round 3/3 done
+[robustness] cnn_acc_s0 done
+[robustness] cnn_acc_s1 done
+[robustness] cnn_acc_s2 done
+[robustness] cnn_acc_s3 done
+[robustness] cnn_acc_s4 done
+[robustness] logreg_acc_s0 done
+[robustness] cnn_gyro_s0 done
+[robustness] cnn_gyro_s1 done
+[robustness] cnn_gyro_s2 done
+[robustness] cnn_gyro_s3 done
+[robustness] cnn_gyro_s4 done
+[robustness] logreg_gyro_s0 done
+[robustness] cnn_acc_gyro_s0 done
+[robustness] cnn_acc_gyro_s1 done
+[robustness] cnn_acc_gyro_s2 done
+[robustness] cnn_acc_gyro_s3 done
+[robustness] cnn_acc_gyro_s4 done
+[robustness] logreg_acc_gyro_s0 done
+[robustness] cnn_acc_raw3_s0 done
+[robustness] cnn_acc_raw3_s1 done
+[robustness] cnn_acc_raw3_s2 done
+[robustness] cnn_acc_raw3_s3 done
+[robustness] cnn_acc_raw3_s4 done
+[robustness] logreg_acc_raw3_s0 done
+[robustness] cnn_acc_raw3_gyro_s0 done
+[robustness] cnn_acc_raw3_gyro_s1 done
+[robustness] cnn_acc_raw3_gyro_s2 done
+[robustness] cnn_acc_raw3_gyro_s3 done
+[robustness] cnn_acc_raw3_gyro_s4 done
+[robustness] logreg_acc_raw3_gyro_s0 done
+logreg fusion vs accelerometer (9 vs 6 ch)           seed_dF1=+0.0250 subj_d=+0.0280 CI=[+0.0109,+0.0453] p=0.0195 subj a>b 8/9
+logreg fusion vs gyroscope (9 vs 3 ch)               seed_dF1=+0.2369 subj_d=+0.2235 CI=[+0.1272,+0.3160] p=0.0039 subj a>b 9/9
+logreg total_acc+gyro vs total_acc (6 vs 3 ch)       seed_dF1=+0.0645 subj_d=+0.0691 CI=[+0.0403,+0.0977] p=0.0039 subj a>b 9/9
+logreg total_acc vs gyro (3 vs 3 ch)                 seed_dF1=+0.1588 subj_d=+0.1387 CI=[+0.0362,+0.2384] p=0.0742 subj a>b 7/9
+logreg adding derived body_acc (6 vs 3 ch)           seed_dF1=+0.0532 subj_d=+0.0567 CI=[+0.0359,+0.0780] p=0.0039 subj a>b 9/9
+cnn    fusion vs accelerometer (9 vs 6 ch)           seed_dF1=+0.0095 subj_d=+0.0145 CI=[-0.0058,+0.0407] p=0.1953 subj a>b 6/9
+cnn    fusion vs gyroscope (9 vs 3 ch)               seed_dF1=+0.1241 subj_d=+0.1198 CI=[+0.0624,+0.1644] p=0.0117 subj a>b 8/9
+cnn    total_acc+gyro vs total_acc (6 vs 3 ch)       seed_dF1=+0.0214 subj_d=+0.0296 CI=[+0.0038,+0.0594] p=0.0742 subj a>b 7/9
+cnn    total_acc vs gyro (3 vs 3 ch)                 seed_dF1=+0.1031 subj_d=+0.0922 CI=[+0.0378,+0.1403] p=0.0195 subj a>b 7/9
+cnn    adding derived body_acc (6 vs 3 ch)           seed_dF1=+0.0115 subj_d=+0.0131 CI=[-0.0007,+0.0320] p=0.1289 subj a>b 6/9
+figures written to results\figures

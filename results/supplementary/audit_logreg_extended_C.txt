@@ -1,0 +1,75 @@
+[1] official split
+  ok   official train/test subjects are disjoint
+  ok   test subject 2 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 4 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 9 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 10 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 12 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 13 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 18 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 20 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 24 has all 6 activities (per-subject macro-F1 valid)
+[2] per-run checks (5 runs)
+  ok   logreg_acc_gyro_s0: train/val/test subjects disjoint
+  ok   logreg_acc_gyro_s0: val drawn from official train only
+  ok   logreg_acc_gyro_s0: window counts add up
+  ok   logreg_acc_gyro_s0: scaler == train-partition statistics
+  ok   logreg_acc_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   logreg_acc_gyro_s0: confusion sums to n_test
+  ok   logreg_acc_gyro_s0: accuracy recomputed from confusion
+  ok   logreg_acc_gyro_s0: macro-F1 recomputed from confusion
+  ok   logreg_acc_gyro_s0: reloaded model reproduces test F1
+  ok   logreg_acc_gyro_s0: lbfgs converged for every C (n_iter < 2000)
+  ok   logreg_acc_gyro_s0: selected C = argmax of validation sweep
+  ok   logreg_acc_raw3_gyro_s0: train/val/test subjects disjoint
+  ok   logreg_acc_raw3_gyro_s0: val drawn from official train only
+  ok   logreg_acc_raw3_gyro_s0: window counts add up
+  ok   logreg_acc_raw3_gyro_s0: scaler == train-partition statistics
+  ok   logreg_acc_raw3_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   logreg_acc_raw3_gyro_s0: confusion sums to n_test
+  ok   logreg_acc_raw3_gyro_s0: accuracy recomputed from confusion
+  ok   logreg_acc_raw3_gyro_s0: macro-F1 recomputed from confusion
+  ok   logreg_acc_raw3_gyro_s0: reloaded model reproduces test F1
+  ok   logreg_acc_raw3_gyro_s0: lbfgs converged for every C (n_iter < 2000)
+  ok   logreg_acc_raw3_gyro_s0: selected C = argmax of validation sweep
+  ok   logreg_acc_raw3_s0: train/val/test subjects disjoint
+  ok   logreg_acc_raw3_s0: val drawn from official train only
+  ok   logreg_acc_raw3_s0: window counts add up
+  ok   logreg_acc_raw3_s0: scaler == train-partition statistics
+  ok   logreg_acc_raw3_s0: scaler differs from train+val statistics (val not used)
+  ok   logreg_acc_raw3_s0: confusion sums to n_test
+  ok   logreg_acc_raw3_s0: accuracy recomputed from confusion
+  ok   logreg_acc_raw3_s0: macro-F1 recomputed from confusion
+  ok   logreg_acc_raw3_s0: reloaded model reproduces test F1
+  ok   logreg_acc_raw3_s0: lbfgs converged for every C (n_iter < 2000)
+  ok   logreg_acc_raw3_s0: selected C = argmax of validation sweep
+  ok   logreg_acc_s0: train/val/test subjects disjoint
+  ok   logreg_acc_s0: val drawn from official train only
+  ok   logreg_acc_s0: window counts add up
+  ok   logreg_acc_s0: scaler == train-partition statistics
+  ok   logreg_acc_s0: scaler differs from train+val statistics (val not used)
+  ok   logreg_acc_s0: confusion sums to n_test
+  ok   logreg_acc_s0: accuracy recomputed from confusion
+  ok   logreg_acc_s0: macro-F1 recomputed from confusion
+  ok   logreg_acc_s0: reloaded model reproduces test F1
+  ok   logreg_acc_s0: lbfgs converged for every C (n_iter < 2000)
+  ok   logreg_acc_s0: selected C = argmax of validation sweep
+  ok   logreg_gyro_s0: train/val/test subjects disjoint
+  ok   logreg_gyro_s0: val drawn from official train only
+  ok   logreg_gyro_s0: window counts add up
+  ok   logreg_gyro_s0: scaler == train-partition statistics
+  ok   logreg_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   logreg_gyro_s0: confusion sums to n_test
+  ok   logreg_gyro_s0: accuracy recomputed from confusion
+  ok   logreg_gyro_s0: macro-F1 recomputed from confusion
+  ok   logreg_gyro_s0: reloaded model reproduces test F1
+  ok   logreg_gyro_s0: lbfgs converged for every C (n_iter < 2000)
+  ok   logreg_gyro_s0: selected C = argmax of validation sweep
+[3] summary table recomputed from runs.csv
+  ok   summary logreg/acc: mean over 1 runs
+  ok   summary logreg/acc_gyro: mean over 1 runs
+  ok   summary logreg/acc_raw3: mean over 1 runs
+  ok   summary logreg/acc_raw3_gyro: mean over 1 runs
+  ok   summary logreg/gyro: mean over 1 runs
+
+0 failed checks

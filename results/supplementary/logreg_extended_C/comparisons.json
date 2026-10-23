@@ -1,0 +1,192 @@
+[
+  {
+    "model": "logreg",
+    "a": "acc_gyro",
+    "b": "acc",
+    "n_seeds": 1,
+    "seed_macro_f1_diff_mean": 0.05015177676855004,
+    "seed_macro_f1_diff_std": 0.0,
+    "seeds_a_better": 1,
+    "n_subjects": 9,
+    "subject_diff": {
+      "2": 0.02684896455775354,
+      "4": 0.10929293135235857,
+      "9": 0.016679954032764732,
+      "10": 0.08875977200601348,
+      "12": -0.008068093186765157,
+      "13": 0.08923764034391579,
+      "18": 0.09359937556974052,
+      "20": 0.10333004703736215,
+      "24": -0.03452343813505643
+    },
+    "subjects_a_better": 7,
+    "subject_diff_mean": 0.05390635039756524,
+    "subject_diff_bootstrap_ci95": [
+      0.01974640552199264,
+      0.085832945362425
+    ],
+    "wilcoxon_p_two_sided": 0.0390625,
+    "per_class_f1_diff_mean": {
+      "WALKING": 0.07224031368379077,
+      "WALKING_UPSTAIRS": -0.0020843135880827535,
+      "WALKING_DOWNSTAIRS": 0.16249777998792314,
+      "SITTING": 0.01864046293866617,
+      "STANDING": 0.05751468873907767,
+      "LAYING": -0.007898271150075464
+    },
+    "label": "fusion vs accelerometer (9 vs 6 ch)",
+    "wilcoxon_p_holm": 0.08203125
+  },
+  {
+    "model": "logreg",
+    "a": "acc_gyro",
+    "b": "gyro",
+    "n_seeds": 1,
+    "seed_macro_f1_diff_mean": 0.2577427563068317,
+    "seed_macro_f1_diff_std": 0.0,
+    "seeds_a_better": 1,
+    "n_subjects": 9,
+    "subject_diff": {
+      "2": 0.0262318129350948,
+      "4": 0.20699279380713195,
+      "9": 0.04153014335666799,
+      "10": 0.08357363815733004,
+      "12": 0.31269627357205254,
+      "13": 0.4409452506991291,
+      "18": 0.3792819142684536,
+      "20": 0.31823476762690034,
+      "24": 0.38585821394641506
+    },
+    "subjects_a_better": 9,
+    "subject_diff_mean": 0.24392720092990838,
+    "subject_diff_bootstrap_ci95": [
+      0.1416846845303745,
+      0.3407291196963084
+    ],
+    "wilcoxon_p_two_sided": 0.00390625,
+    "per_class_f1_diff_mean": {
+      "WALKING": -0.0700353146968547,
+      "WALKING_UPSTAIRS": 0.11698453986214774,
+      "WALKING_DOWNSTAIRS": 0.004547052104384497,
+      "SITTING": 0.6026098036549586,
+      "STANDING": 0.12631680572729265,
+      "LAYING": 0.7660336511890609
+    },
+    "label": "fusion vs gyroscope (9 vs 3 ch)",
+    "wilcoxon_p_holm": 0.01953125
+  },
+  {
+    "model": "logreg",
+    "a": "acc_raw3_gyro",
+    "b": "acc_raw3",
+    "n_seeds": 1,
+    "seed_macro_f1_diff_mean": 0.0523533133431045,
+    "seed_macro_f1_diff_std": 0.0,
+    "seeds_a_better": 1,
+    "n_subjects": 9,
+    "subject_diff": {
+      "2": 0.08811879735759387,
+      "4": 0.004154857981347737,
+      "9": 0.06810772872360571,
+      "10": 0.07650254001499354,
+      "12": 0.013854893312781447,
+      "13": 0.10080221983871529,
+      "18": 0.012793318544402688,
+      "20": 0.1275973926195949,
+      "24": 0.03240962034734618
+    },
+    "subjects_a_better": 9,
+    "subject_diff_mean": 0.0582601520822646,
+    "subject_diff_bootstrap_ci95": [
+      0.031900604206861256,
+      0.08494498277522528
+    ],
+    "wilcoxon_p_two_sided": 0.00390625,
+    "per_class_f1_diff_mean": {
+      "WALKING": 0.046328519912445076,
+      "WALKING_UPSTAIRS": 0.01462914343551519,
+      "WALKING_DOWNSTAIRS": 0.19559065967864964,
+      "SITTING": 0.004981723953325634,
+      "STANDING": 0.03565935209279475,
+      "LAYING": 0.016930480985896
+    },
+    "label": "total_acc+gyro vs total_acc (6 vs 3 ch)",
+    "wilcoxon_p_holm": 0.01953125
+  },
+  {
+    "model": "logreg",
+    "a": "acc_raw3",
+    "b": "gyro",
+    "n_seeds": 1,
+    "seed_macro_f1_diff_mean": 0.17960105890180145,
+    "seed_macro_f1_diff_std": 0.0,
+    "seeds_a_better": 1,
+    "n_subjects": 9,
+    "subject_diff": {
+      "2": -0.0549294570196977,
+      "4": 0.08727628918411887,
+      "9": -0.032907652873933324,
+      "10": -0.018821027534510898,
+      "12": 0.28334962134529973,
+      "13": 0.2938428805992805,
+      "18": 0.31097778122140995,
+      "20": 0.1928759391104538,
+      "24": 0.3709738399132505
+    },
+    "subjects_a_better": 6,
+    "subject_diff_mean": 0.1591820237717413,
+    "subject_diff_bootstrap_ci95": [
+      0.053971539786973784,
+      0.25951719497515646
+    ],
+    "wilcoxon_p_two_sided": 0.0546875,
+    "per_class_f1_diff_mean": {
+      "WALKING": -0.1663751713760539,
+      "WALKING_UPSTAIRS": 0.08002415781231348,
+      "WALKING_DOWNSTAIRS": -0.2294050343249428,
+      "SITTING": 0.5856221553505045,
+      "STANDING": 0.05073880459574709,
+      "LAYING": 0.7570014413532402
+    },
+    "label": "total_acc vs gyro (3 vs 3 ch)",
+    "wilcoxon_p_holm": 0.08203125
+  },
+  {
+    "model": "logreg",
+    "a": "acc",
+    "b": "acc_raw3",
+    "n_seeds": 1,
+    "seed_macro_f1_diff_mean": 0.027989920636480203,
+    "seed_macro_f1_diff_std": 0.0,
+    "seeds_a_better": 1,
+    "n_subjects": 9,
+    "subject_diff": {
+      "2": 0.05431230539703896,
+      "4": 0.010423573270654518,
+      "9": 0.057757842197836584,
+      "10": 0.01363489368582746,
+      "12": 0.03741474541351797,
+      "13": 0.05786472975593282,
+      "18": -0.02529524252269688,
+      "20": 0.02202878147908438,
+      "24": 0.04940781216822099
+    },
+    "subjects_a_better": 8,
+    "subject_diff_mean": 0.030838826760601862,
+    "subject_diff_bootstrap_ci95": [
+      0.012397814767889898,
+      0.04649596652302784
+    ],
+    "wilcoxon_p_two_sided": 0.02734375,
+    "per_class_f1_diff_mean": {
+      "WALKING": 0.024099542995408424,
+      "WALKING_UPSTAIRS": 0.039044695637917015,
+      "WALKING_DOWNSTAIRS": 0.07145430644140414,
+      "SITTING": -0.0016528146342120742,
+      "STANDING": 0.01806331239246789,
+      "LAYING": 0.016930480985896
+    },
+    "label": "adding derived body_acc (6 vs 3 ch)",
+    "wilcoxon_p_holm": 0.08203125
+  }
+]

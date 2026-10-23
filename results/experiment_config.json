@@ -1,0 +1,101 @@
+{
+  "config": {
+    "data_dir": "data",
+    "results_dir": "results",
+    "split": {
+      "n_val_subjects": 5,
+      "seed": 0
+    },
+    "conditions": [
+      "acc",
+      "gyro",
+      "acc_gyro",
+      "acc_raw3",
+      "acc_raw3_gyro"
+    ],
+    "models": [
+      "logreg",
+      "cnn"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "logreg": {
+      "C_grid": [
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "max_iter": 2000,
+      "seeds": [
+        0
+      ]
+    },
+    "cnn": {
+      "widths": [
+        32,
+        64,
+        64
+      ],
+      "kernels": [
+        7,
+        5,
+        3
+      ],
+      "dropout": 0.3
+    },
+    "training": {
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "max_epochs": 60,
+      "patience": 10,
+      "train_threads": 8,
+      "log_every": 0
+    },
+    "benchmark": {
+      "warmup": 100,
+      "iters": 500,
+      "rounds": 3,
+      "torch_threads": [
+        1,
+        4
+      ],
+      "seed": 0
+    },
+    "robustness": {
+      "enabled": true,
+      "sigmas": [
+        0.0,
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "targets": [
+        "all",
+        "acc",
+        "gyro"
+      ],
+      "repeats": 3,
+      "seed": 1234
+    },
+    "_config_path": "configs/default.yaml"
+  },
+  "environment": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "torch": "2.12.0+cpu",
+    "torch_threads_default": 8,
+    "numpy": "2.3.2",
+    "sklearn": "1.7.2",
+    "git_commit": null
+  }
+}

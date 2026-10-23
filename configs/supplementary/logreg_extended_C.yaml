@@ -1,0 +1,51 @@
+# SUPPLEMENTARY (added after the main run). The main-run validation sweep chose
+# C at the lower edge of the grid for 4/5 conditions, so the grid is extended
+# downward. Selection is still on validation only.
+# Main experiment configuration. All hyperparameters below were fixed BEFORE
+# looking at any test-set result; the only data-driven choices are the LogReg C
+# (validation sweep) and the CNN early-stopping epoch (validation macro-F1).
+
+data_dir: data
+results_dir: results/supplementary/logreg_extended_C
+
+split:
+  # 5 of the 21 official training subjects are held out for validation.
+  n_val_subjects: 5
+  seed: 0
+
+conditions: [acc, gyro, acc_gyro, acc_raw3, acc_raw3_gyro]
+models: [logreg]
+seeds: [0, 1, 2, 3, 4]
+
+logreg:
+  C_grid: [0.00001, 0.00003, 0.0001, 0.0003, 0.001, 0.01]
+  max_iter: 2000
+  seeds: [0]          # lbfgs on a convex objective is deterministic
+
+cnn:
+  widths: [32, 64, 64]
+  kernels: [7, 5, 3]
+  dropout: 0.3
+
+training:
+  lr: 0.001
+  weight_decay: 0.0001
+  batch_size: 64
+  max_epochs: 60
+  patience: 10        # epochs without val macro-F1 improvement
+  train_threads: 8
+  log_every: 0
+
+benchmark:
+  warmup: 100
+  iters: 500
+  rounds: 3              # run order shuffled each round; samples pooled
+  torch_threads: [1, 4]  # CNN model-only latency at these intra-op thread counts
+  seed: 0
+
+robustness:
+  enabled: false
+  sigmas: [0.0, 0.1, 0.25, 0.5, 1.0]
+  targets: [all, acc, gyro]
+  repeats: 3
+  seed: 1234

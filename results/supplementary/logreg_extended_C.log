@@ -1,0 +1,15 @@
+[logreg_acc_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.5304 macroF1=0.4784 params=4614 best_epoch=-
+[logreg_gyro_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.2833 macroF1=0.2708 params=2310 best_epoch=-
+[logreg_acc_gyro_s0] channels=9 train/val/test=5657/1695/2947
+    test acc=0.5606 macroF1=0.5285 params=6918 best_epoch=-
+[logreg_acc_raw3_s0] channels=3 train/val/test=5657/1695/2947
+    test acc=0.5073 macroF1=0.4504 params=2310 best_epoch=-
+[logreg_acc_raw3_gyro_s0] channels=6 train/val/test=5657/1695/2947
+    test acc=0.5405 macroF1=0.5027 params=4614 best_epoch=-
+logreg fusion vs accelerometer (9 vs 6 ch)           seed_dF1=+0.0502 subj_d=+0.0539 CI=[+0.0197,+0.0858] p=0.0391 subj a>b 7/9
+logreg fusion vs gyroscope (9 vs 3 ch)               seed_dF1=+0.2577 subj_d=+0.2439 CI=[+0.1417,+0.3407] p=0.0039 subj a>b 9/9
+logreg total_acc+gyro vs total_acc (6 vs 3 ch)       seed_dF1=+0.0524 subj_d=+0.0583 CI=[+0.0319,+0.0849] p=0.0039 subj a>b 9/9
+logreg total_acc vs gyro (3 vs 3 ch)                 seed_dF1=+0.1796 subj_d=+0.1592 CI=[+0.0540,+0.2595] p=0.0547 subj a>b 6/9
+logreg adding derived body_acc (6 vs 3 ch)           seed_dF1=+0.0280 subj_d=+0.0308 CI=[+0.0124,+0.0465] p=0.0273 subj a>b 8/9

@@ -1,0 +1,6 @@
+model,condition,n_seeds,n_channels,params,val_macro_f1_mean,val_macro_f1_std,test_accuracy_mean,test_accuracy_std,test_macro_f1_mean,test_macro_f1_std,latency_median_ms_mean,latency_median_ms_std,latency_p95_ms_mean,latency_p95_ms_std,e2e_latency_median_ms_mean,e2e_latency_median_ms_std,e2e_latency_p95_ms_mean,e2e_latency_p95_ms_std
+cnn,acc,5,6,24582,0.9097,0.00446,0.90356,0.00725,0.90293,0.00746,nan,nan,nan,nan,nan,nan,nan,nan
+cnn,acc_gyro,5,9,25254,0.91189,0.00188,0.91564,0.00787,0.91584,0.00774,nan,nan,nan,nan,nan,nan,nan,nan
+cnn,acc_raw3,5,3,23910,0.90919,0.00613,0.89012,0.02437,0.88986,0.02463,nan,nan,nan,nan,nan,nan,nan,nan
+cnn,acc_raw3_gyro,5,6,24582,0.91467,0.00281,0.91666,0.0054,0.91629,0.00533,nan,nan,nan,nan,nan,nan,nan,nan
+cnn,gyro,5,3,23910,0.8014,0.01927,0.78629,0.01408,0.78956,0.01394,nan,nan,nan,nan,nan,nan,nan,nan

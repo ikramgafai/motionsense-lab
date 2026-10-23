@@ -1,0 +1,17 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Dataset downloads and caches (re-created by `python -m motionsense download`)
+data/
+
+# Large / regenerable per-run artifacts. The aggregated tables (results/*.csv,
+# results/*.json) and figures are small and are kept as the evidence behind
+# RESEARCH_REPORT.md.
+results/**/model.pt
+results/**/logreg.npz
+results_smoke/
+results/_audit_retrain/

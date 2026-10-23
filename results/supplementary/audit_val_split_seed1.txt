@@ -1,0 +1,295 @@
+[1] official split
+  ok   official train/test subjects are disjoint
+  ok   test subject 2 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 4 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 9 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 10 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 12 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 13 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 18 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 20 has all 6 activities (per-subject macro-F1 valid)
+  ok   test subject 24 has all 6 activities (per-subject macro-F1 valid)
+[2] per-run checks (25 runs)
+  ok   cnn_acc_gyro_s0: train/val/test subjects disjoint
+  ok   cnn_acc_gyro_s0: val drawn from official train only
+  ok   cnn_acc_gyro_s0: window counts add up
+  ok   cnn_acc_gyro_s0: scaler == train-partition statistics
+  ok   cnn_acc_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_gyro_s0: confusion sums to n_test
+  ok   cnn_acc_gyro_s0: accuracy recomputed from confusion
+  ok   cnn_acc_gyro_s0: macro-F1 recomputed from confusion
+  ok   cnn_acc_gyro_s0: reloaded model reproduces test F1
+  ok   cnn_acc_gyro_s0: best epoch = argmax of validation curve
+  ok   cnn_acc_gyro_s0: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_gyro_s1: train/val/test subjects disjoint
+  ok   cnn_acc_gyro_s1: val drawn from official train only
+  ok   cnn_acc_gyro_s1: window counts add up
+  ok   cnn_acc_gyro_s1: scaler == train-partition statistics
+  ok   cnn_acc_gyro_s1: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_gyro_s1: confusion sums to n_test
+  ok   cnn_acc_gyro_s1: accuracy recomputed from confusion
+  ok   cnn_acc_gyro_s1: macro-F1 recomputed from confusion
+  ok   cnn_acc_gyro_s1: reloaded model reproduces test F1
+  ok   cnn_acc_gyro_s1: best epoch = argmax of validation curve
+  ok   cnn_acc_gyro_s1: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_gyro_s2: train/val/test subjects disjoint
+  ok   cnn_acc_gyro_s2: val drawn from official train only
+  ok   cnn_acc_gyro_s2: window counts add up
+  ok   cnn_acc_gyro_s2: scaler == train-partition statistics
+  ok   cnn_acc_gyro_s2: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_gyro_s2: confusion sums to n_test
+  ok   cnn_acc_gyro_s2: accuracy recomputed from confusion
+  ok   cnn_acc_gyro_s2: macro-F1 recomputed from confusion
+  ok   cnn_acc_gyro_s2: reloaded model reproduces test F1
+  ok   cnn_acc_gyro_s2: best epoch = argmax of validation curve
+  ok   cnn_acc_gyro_s2: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_gyro_s3: train/val/test subjects disjoint
+  ok   cnn_acc_gyro_s3: val drawn from official train only
+  ok   cnn_acc_gyro_s3: window counts add up
+  ok   cnn_acc_gyro_s3: scaler == train-partition statistics
+  ok   cnn_acc_gyro_s3: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_gyro_s3: confusion sums to n_test
+  ok   cnn_acc_gyro_s3: accuracy recomputed from confusion
+  ok   cnn_acc_gyro_s3: macro-F1 recomputed from confusion
+  ok   cnn_acc_gyro_s3: reloaded model reproduces test F1
+  ok   cnn_acc_gyro_s3: best epoch = argmax of validation curve
+  ok   cnn_acc_gyro_s3: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_gyro_s4: train/val/test subjects disjoint
+  ok   cnn_acc_gyro_s4: val drawn from official train only
+  ok   cnn_acc_gyro_s4: window counts add up
+  ok   cnn_acc_gyro_s4: scaler == train-partition statistics
+  ok   cnn_acc_gyro_s4: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_gyro_s4: confusion sums to n_test
+  ok   cnn_acc_gyro_s4: accuracy recomputed from confusion
+  ok   cnn_acc_gyro_s4: macro-F1 recomputed from confusion
+  ok   cnn_acc_gyro_s4: reloaded model reproduces test F1
+  ok   cnn_acc_gyro_s4: best epoch = argmax of validation curve
+  ok   cnn_acc_gyro_s4: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_gyro_s0: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_gyro_s0: val drawn from official train only
+  ok   cnn_acc_raw3_gyro_s0: window counts add up
+  ok   cnn_acc_raw3_gyro_s0: scaler == train-partition statistics
+  ok   cnn_acc_raw3_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_gyro_s0: confusion sums to n_test
+  ok   cnn_acc_raw3_gyro_s0: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s0: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s0: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_gyro_s0: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_gyro_s0: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_gyro_s1: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_gyro_s1: val drawn from official train only
+  ok   cnn_acc_raw3_gyro_s1: window counts add up
+  ok   cnn_acc_raw3_gyro_s1: scaler == train-partition statistics
+  ok   cnn_acc_raw3_gyro_s1: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_gyro_s1: confusion sums to n_test
+  ok   cnn_acc_raw3_gyro_s1: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s1: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s1: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_gyro_s1: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_gyro_s1: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_gyro_s2: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_gyro_s2: val drawn from official train only
+  ok   cnn_acc_raw3_gyro_s2: window counts add up
+  ok   cnn_acc_raw3_gyro_s2: scaler == train-partition statistics
+  ok   cnn_acc_raw3_gyro_s2: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_gyro_s2: confusion sums to n_test
+  ok   cnn_acc_raw3_gyro_s2: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s2: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s2: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_gyro_s2: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_gyro_s2: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_gyro_s3: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_gyro_s3: val drawn from official train only
+  ok   cnn_acc_raw3_gyro_s3: window counts add up
+  ok   cnn_acc_raw3_gyro_s3: scaler == train-partition statistics
+  ok   cnn_acc_raw3_gyro_s3: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_gyro_s3: confusion sums to n_test
+  ok   cnn_acc_raw3_gyro_s3: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s3: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s3: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_gyro_s3: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_gyro_s3: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_gyro_s4: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_gyro_s4: val drawn from official train only
+  ok   cnn_acc_raw3_gyro_s4: window counts add up
+  ok   cnn_acc_raw3_gyro_s4: scaler == train-partition statistics
+  ok   cnn_acc_raw3_gyro_s4: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_gyro_s4: confusion sums to n_test
+  ok   cnn_acc_raw3_gyro_s4: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s4: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_gyro_s4: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_gyro_s4: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_gyro_s4: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_s0: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_s0: val drawn from official train only
+  ok   cnn_acc_raw3_s0: window counts add up
+  ok   cnn_acc_raw3_s0: scaler == train-partition statistics
+  ok   cnn_acc_raw3_s0: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_s0: confusion sums to n_test
+  ok   cnn_acc_raw3_s0: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_s0: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_s0: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_s0: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_s0: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_s1: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_s1: val drawn from official train only
+  ok   cnn_acc_raw3_s1: window counts add up
+  ok   cnn_acc_raw3_s1: scaler == train-partition statistics
+  ok   cnn_acc_raw3_s1: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_s1: confusion sums to n_test
+  ok   cnn_acc_raw3_s1: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_s1: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_s1: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_s1: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_s1: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_s2: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_s2: val drawn from official train only
+  ok   cnn_acc_raw3_s2: window counts add up
+  ok   cnn_acc_raw3_s2: scaler == train-partition statistics
+  ok   cnn_acc_raw3_s2: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_s2: confusion sums to n_test
+  ok   cnn_acc_raw3_s2: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_s2: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_s2: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_s2: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_s2: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_s3: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_s3: val drawn from official train only
+  ok   cnn_acc_raw3_s3: window counts add up
+  ok   cnn_acc_raw3_s3: scaler == train-partition statistics
+  ok   cnn_acc_raw3_s3: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_s3: confusion sums to n_test
+  ok   cnn_acc_raw3_s3: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_s3: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_s3: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_s3: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_s3: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_raw3_s4: train/val/test subjects disjoint
+  ok   cnn_acc_raw3_s4: val drawn from official train only
+  ok   cnn_acc_raw3_s4: window counts add up
+  ok   cnn_acc_raw3_s4: scaler == train-partition statistics
+  ok   cnn_acc_raw3_s4: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_raw3_s4: confusion sums to n_test
+  ok   cnn_acc_raw3_s4: accuracy recomputed from confusion
+  ok   cnn_acc_raw3_s4: macro-F1 recomputed from confusion
+  ok   cnn_acc_raw3_s4: reloaded model reproduces test F1
+  ok   cnn_acc_raw3_s4: best epoch = argmax of validation curve
+  ok   cnn_acc_raw3_s4: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_s0: train/val/test subjects disjoint
+  ok   cnn_acc_s0: val drawn from official train only
+  ok   cnn_acc_s0: window counts add up
+  ok   cnn_acc_s0: scaler == train-partition statistics
+  ok   cnn_acc_s0: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_s0: confusion sums to n_test
+  ok   cnn_acc_s0: accuracy recomputed from confusion
+  ok   cnn_acc_s0: macro-F1 recomputed from confusion
+  ok   cnn_acc_s0: reloaded model reproduces test F1
+  ok   cnn_acc_s0: best epoch = argmax of validation curve
+  ok   cnn_acc_s0: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_s1: train/val/test subjects disjoint
+  ok   cnn_acc_s1: val drawn from official train only
+  ok   cnn_acc_s1: window counts add up
+  ok   cnn_acc_s1: scaler == train-partition statistics
+  ok   cnn_acc_s1: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_s1: confusion sums to n_test
+  ok   cnn_acc_s1: accuracy recomputed from confusion
+  ok   cnn_acc_s1: macro-F1 recomputed from confusion
+  ok   cnn_acc_s1: reloaded model reproduces test F1
+  ok   cnn_acc_s1: best epoch = argmax of validation curve
+  ok   cnn_acc_s1: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_s2: train/val/test subjects disjoint
+  ok   cnn_acc_s2: val drawn from official train only
+  ok   cnn_acc_s2: window counts add up
+  ok   cnn_acc_s2: scaler == train-partition statistics
+  ok   cnn_acc_s2: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_s2: confusion sums to n_test
+  ok   cnn_acc_s2: accuracy recomputed from confusion
+  ok   cnn_acc_s2: macro-F1 recomputed from confusion
+  ok   cnn_acc_s2: reloaded model reproduces test F1
+  ok   cnn_acc_s2: best epoch = argmax of validation curve
+  ok   cnn_acc_s2: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_s3: train/val/test subjects disjoint
+  ok   cnn_acc_s3: val drawn from official train only
+  ok   cnn_acc_s3: window counts add up
+  ok   cnn_acc_s3: scaler == train-partition statistics
+  ok   cnn_acc_s3: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_s3: confusion sums to n_test
+  ok   cnn_acc_s3: accuracy recomputed from confusion
+  ok   cnn_acc_s3: macro-F1 recomputed from confusion
+  ok   cnn_acc_s3: reloaded model reproduces test F1
+  ok   cnn_acc_s3: best epoch = argmax of validation curve
+  ok   cnn_acc_s3: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_acc_s4: train/val/test subjects disjoint
+  ok   cnn_acc_s4: val drawn from official train only
+  ok   cnn_acc_s4: window counts add up
+  ok   cnn_acc_s4: scaler == train-partition statistics
+  ok   cnn_acc_s4: scaler differs from train+val statistics (val not used)
+  ok   cnn_acc_s4: confusion sums to n_test
+  ok   cnn_acc_s4: accuracy recomputed from confusion
+  ok   cnn_acc_s4: macro-F1 recomputed from confusion
+  ok   cnn_acc_s4: reloaded model reproduces test F1
+  ok   cnn_acc_s4: best epoch = argmax of validation curve
+  ok   cnn_acc_s4: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_gyro_s0: train/val/test subjects disjoint
+  ok   cnn_gyro_s0: val drawn from official train only
+  ok   cnn_gyro_s0: window counts add up
+  ok   cnn_gyro_s0: scaler == train-partition statistics
+  ok   cnn_gyro_s0: scaler differs from train+val statistics (val not used)
+  ok   cnn_gyro_s0: confusion sums to n_test
+  ok   cnn_gyro_s0: accuracy recomputed from confusion
+  ok   cnn_gyro_s0: macro-F1 recomputed from confusion
+  ok   cnn_gyro_s0: reloaded model reproduces test F1
+  ok   cnn_gyro_s0: best epoch = argmax of validation curve
+  ok   cnn_gyro_s0: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_gyro_s1: train/val/test subjects disjoint
+  ok   cnn_gyro_s1: val drawn from official train only
+  ok   cnn_gyro_s1: window counts add up
+  ok   cnn_gyro_s1: scaler == train-partition statistics
+  ok   cnn_gyro_s1: scaler differs from train+val statistics (val not used)
+  ok   cnn_gyro_s1: confusion sums to n_test
+  ok   cnn_gyro_s1: accuracy recomputed from confusion
+  ok   cnn_gyro_s1: macro-F1 recomputed from confusion
+  ok   cnn_gyro_s1: reloaded model reproduces test F1
+  ok   cnn_gyro_s1: best epoch = argmax of validation curve
+  ok   cnn_gyro_s1: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_gyro_s2: train/val/test subjects disjoint
+  ok   cnn_gyro_s2: val drawn from official train only
+  ok   cnn_gyro_s2: window counts add up
+  ok   cnn_gyro_s2: scaler == train-partition statistics
+  ok   cnn_gyro_s2: scaler differs from train+val statistics (val not used)
+  ok   cnn_gyro_s2: confusion sums to n_test
+  ok   cnn_gyro_s2: accuracy recomputed from confusion
+  ok   cnn_gyro_s2: macro-F1 recomputed from confusion
+  ok   cnn_gyro_s2: reloaded model reproduces test F1
+  ok   cnn_gyro_s2: best epoch = argmax of validation curve
+  ok   cnn_gyro_s2: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_gyro_s3: train/val/test subjects disjoint
+  ok   cnn_gyro_s3: val drawn from official train only
+  ok   cnn_gyro_s3: window counts add up
+  ok   cnn_gyro_s3: scaler == train-partition statistics
+  ok   cnn_gyro_s3: scaler differs from train+val statistics (val not used)
+  ok   cnn_gyro_s3: confusion sums to n_test
+  ok   cnn_gyro_s3: accuracy recomputed from confusion
+  ok   cnn_gyro_s3: macro-F1 recomputed from confusion
+  ok   cnn_gyro_s3: reloaded model reproduces test F1
+  ok   cnn_gyro_s3: best epoch = argmax of validation curve
+  ok   cnn_gyro_s3: stopped exactly `patience` epochs after best (or at max)
+  ok   cnn_gyro_s4: train/val/test subjects disjoint
+  ok   cnn_gyro_s4: val drawn from official train only
+  ok   cnn_gyro_s4: window counts add up
+  ok   cnn_gyro_s4: scaler == train-partition statistics
+  ok   cnn_gyro_s4: scaler differs from train+val statistics (val not used)
+  ok   cnn_gyro_s4: confusion sums to n_test
+  ok   cnn_gyro_s4: accuracy recomputed from confusion
+  ok   cnn_gyro_s4: macro-F1 recomputed from confusion
+  ok   cnn_gyro_s4: reloaded model reproduces test F1
+  ok   cnn_gyro_s4: best epoch = argmax of validation curve
+  ok   cnn_gyro_s4: stopped exactly `patience` epochs after best (or at max)
+[3] summary table recomputed from runs.csv
+  ok   summary cnn/acc: mean over 5 runs
+  ok   summary cnn/acc_gyro: mean over 5 runs
+  ok   summary cnn/acc_raw3: mean over 5 runs
+  ok   summary cnn/acc_raw3_gyro: mean over 5 runs
+  ok   summary cnn/gyro: mean over 5 runs
+
+0 failed checks
