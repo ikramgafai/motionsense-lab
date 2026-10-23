@@ -19,19 +19,24 @@ consistent on 5/5 seeds and 8/9 subjects. The subject-level Wilcoxon test
 narrowly misses significance after multiple-comparison correction (Holm p =
 0.059) because 9 subjects give the test little power. Fusion vs
 accelerometer-only: a small gain (+0.010 macro-F1 in the main run, +0.013 on
-a second validation split), positive on most seeds. It cannot be separated
-from subject-to-subject variation: the Wilcoxon p-value is 0.20 (Holm-adjusted
+a second validation split), positive on most seeds. With 9 test subjects it
+is not distinguishable from subject-to-subject variation: the Wilcoxon p-value is 0.20 (Holm-adjusted
 0.26), and one subject accounts for most of the per-subject gain. Fusion costs
-+672 parameters (+2.7 %) and adds no latency we could measure. **Model
-inference** took about 0.5 ms median (0.77–0.88 ms p95) per window on one CPU
-thread for every CNN variant. That figure is inference only. A recogniser
-cannot decide about a 2.56 s window until those 2.56 s have been recorded, so
-end-to-end recognition delay is dominated by the observation window, not the
-model. Conclusion: fusion is cheap and does not hurt on clean data. A
++672 parameters (+2.7 %) and adds no latency difference measurable with this
+setup. **Model-only CPU inference** took about 0.5 ms median (0.77–0.88 ms
+p95) per already-recorded window on one thread for every CNN variant. This is
+not end-to-end recognition latency. A window must first be filled with 2.56 s
+of signal, so recognition delay is dominated by the observation window, not
+the model (§5.3). Conclusion: fusion is cheap and does not hurt on clean data. A
 meaningful accuracy gain over a good accelerometer model is **not
 established** by this study. One new risk was measured: the fused model
 degrades *below* the accelerometer-only model when the gyroscope becomes very
 noisy.
+
+**Scope.** This is inertial-sensor research: a waist-mounted smartphone's
+accelerometer and gyroscope. It involves no cameras, video or pose
+estimation, and its results should not be read as evidence about
+camera-based motion tracking.
 
 ---
 
@@ -60,6 +65,14 @@ easy ones. Accuracy is also reported.
   downloaded by `python -m motionsense download`. The download is checked
   against SHA-256
   `c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031`.
+* **Citation and terms:** the dataset authors require citing D. Anguita,
+  A. Ghio, L. Oneto, X. Parra and J. L. Reyes-Ortiz, *A Public Domain Dataset
+  for Human Activity Recognition Using Smartphones*, 21st European Symposium
+  on Artificial Neural Networks, Computational Intelligence and Machine
+  Learning (ESANN 2013), Bruges, Belgium. Their license text states that the
+  data is distributed as-is and that commercial use is prohibited. This
+  project downloads the data from UCI at run time and does not redistribute
+  it.
 * **Nested ZIP:** the outer archive contains `UCI HAR Dataset.zip`. It is read
   in memory, and only a whitelist of 23 files is extracted (raw inertial
   signals, labels, subject ids). This also rules out path traversal from
@@ -117,9 +130,12 @@ headline number.
 lbfgs, multinomial, L2). Input is the standardised window flattened to
 128·C features. `C` is chosen from {0.001, 0.01, 0.1, 1} by validation
 macro-F1. This is deliberately the weakest reasonable learned baseline. It
-sees the raw signal, but it is not invariant to *where* in the window a
-movement occurs, so it can use static orientation (gravity) but not gait
-dynamics. It is deterministic, so it was run once per condition.
+gives each (channel, timestep) its own fixed weight. It can therefore exploit
+class differences in mean signal level (notably gravity orientation) and
+waveform patterns that recur at a consistent position in the window. It has
+no mechanism to pool over the phase at which a gait cycle starts, and as a
+linear score it cannot compute nonlinear summaries such as signal energy or
+dominant frequency. It is deterministic, so it was run once per condition.
 
 **1D CNN** (`models.SmallCNN`): three blocks of Conv1d → BatchNorm → ReLU
 (widths 32/64/64, kernels 7/5/3, max-pool ×2 after the first two), global
@@ -227,10 +243,14 @@ Figures: [comparison_macro_f1.png](results/figures/comparison_macro_f1.png),
 **Baseline comparison.** The CNN beats flattened-window LogReg by 0.38–0.50
 macro-F1 in every condition. The LogReg per-class F1 shows why: it does well
 on laying (0.96 with accelerometer input), where static gravity direction is
-the signal, but it is poor on the three walking classes (0.07–0.47),
-whose signature is periodic and phase-shifted within the window. A
-flattened linear model cannot represent that. So the baseline gap is mostly
-about *shift invariance*, not model size. LogReg has fewer parameters than the
+the signal, but it is poor on the three walking classes (0.07–0.47). Their
+signature is periodic, and the gait phase at the window start varies from
+window to window. A fixed per-timestep weight vector can match only
+phase-locked templates, and a linear score cannot compute phase-independent
+summaries such as energy or dominant frequency. We attribute most of the
+baseline gap to this missing shift tolerance and nonlinearity rather than to
+model size. That attribution was not isolated experimentally: a feature-based
+or shift-augmented linear baseline would be needed to test it (§10). LogReg has fewer parameters than the
 CNN (2.3k–6.9k vs 24k–25k), but it is not "competitive at a smaller size". It
 answers a different, much easier question.
 
@@ -265,9 +285,11 @@ These LogReg gaps are sensitive to the choice of C (§6A).
 
 1. *Accelerometer > gyroscope* at equal channel count (3 vs 3: +0.10 macro-F1,
    5/5 seeds, 7/9 subjects; Holm p = 0.078, so not significant at the subject
-   level after correction). The confusion matrices show the mechanism: without gravity the
-   gyro-only model cannot tell **laying** from sitting/standing (laying recall
-   0.59; 25 % of laying windows predicted as sitting), and its sit/stand
+   level after correction). The confusion matrices are consistent with the physics: a
+   gyroscope measures rotation rate and gives no direct gravity cue in a
+   stationary posture, and the gyro-only model largely fails to separate
+   **laying** from sitting/standing (laying recall 0.59; 25 % of laying
+   windows predicted as sitting), and its sit/stand
    separation is worse too.
 2. *Adding the gyroscope to the accelerometer* helps most when the
    accelerometer input is minimal: +0.021 seed Δ for raw 3-channel total_acc,
@@ -276,7 +298,7 @@ These LogReg gaps are sensitive to the choice of C (§6A).
    upstairs +0.037) and in sitting (+0.041). Downstairs (−0.020) and laying
    (−0.014) drop slightly.
 3. Adding the *derived* body_acc channels to total_acc gives a similar small
-   gain (+0.0115). That is expected: a fixed linear filter (total minus
+   gain (+0.0115). That is plausible: a fixed linear filter (total minus
    low-passed gravity) is something a CNN could in principle learn. Its benefit is partly an easier input
    representation, not new information.
 
@@ -295,10 +317,12 @@ These LogReg gaps are sensitive to the choice of C (§6A).
   small, threading overhead cancels the parallel speed-up.
 * **Model inference vs recognition delay.** The ~0.5 ms is the time to
   *classify* a window that has already been recorded. Recording the window
-  takes 2,560 ms. With the dataset's 50 % overlap, a new decision can be
-  emitted every 1,280 ms, but each decision still covers motion from the
-  preceding 2.56 s. End-to-end recognition delay is therefore on the order of
-  seconds and set by the windowing scheme. Inference adds about 0.02 % to the
+  takes 2,560 ms. With the dataset's 50 % overlap, a new window completes
+  every 1,280 ms, and each one covers the preceding 2.56 s. After an activity
+  change, the first window made entirely of the new activity completes
+  2.56–3.84 s later (window length plus up to one hop), although a classifier
+  may respond earlier to partially filled windows. End-to-end recognition
+  delay is therefore on the order of seconds and set by the windowing scheme. Inference adds about 0.02 % to the
   2,560 ms window (about 0.04 % of the 1,280 ms hop). Shortening the window is
   the lever for responsiveness; a faster model is not. Sensor I/O, buffering
   and app scheduling were not measured.

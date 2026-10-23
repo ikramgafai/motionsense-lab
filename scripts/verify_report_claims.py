@@ -257,6 +257,18 @@ claim("readme", f"{s['10'][5][1]} of {sum(s['10'][5])} laying", "README S10")
 claim("readme", f"{s['2'][3][4]} of {sum(s['2'][3])} sitting", "README S2")
 claim("readme", f"epoch 1–3 in {len(early)} of 25", "README early stopping count")
 
+claim("readme", f"(laying recall {g[5, 5] / g[5].sum():.2f})", "README gyro-only laying recall")
+from motionsense.data import SAMPLE_RATE_HZ, WINDOW_SECONDS  # noqa: E402
+
+hop = WINDOW_SECONDS / 2  # dataset uses 50 % overlap
+assert abs(WINDOW_SECONDS - 128 / SAMPLE_RATE_HZ) < 1e-9
+for doc in ("readme", "report"):
+    claim(doc, f"{WINDOW_SECONDS:.2f}–{WINDOW_SECONDS + hop:.2f} s", f"{doc} post-change window delay")
+    claim(doc, "odel-only CPU inference", f"{doc} latency labelled model-only")
+    claim(doc, "no cameras, video or pose estimation", f"{doc} scope statement")
+    claim(doc, "post-hoc", f"{doc} discloses post-hoc analyses")
+    claim(doc, "ESANN 2013" if doc == "readme" else "Anguita", f"{doc} keeps dataset citation")
+
 # --- Audit log --------------------------------------------------------------
 audit = (RES / "audit_log.txt").read_text(encoding="utf-8")
 n_ok = audit.count("  ok   ")

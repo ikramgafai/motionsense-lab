@@ -40,18 +40,27 @@ reported.
   +0.013 on a second validation split), but the subject-level test is not
   significant (Wilcoxon p = 0.20, Holm 0.26). One subject accounts for most of
   the gain. **H1 is not established against the accelerometer.**
-* **Cost:** fusion adds 672 parameters (+2.7 %) and no measurable latency.
+* **Cost:** fusion adds 672 parameters (+2.7 %) and no latency difference
+  measurable with this setup.
   Model inference is ≈0.5 ms median per window on one CPU thread for every
   CNN variant (p95 0.77–0.88 ms).
 * **Robustness:** under heavy noise on the gyroscope alone, the fused model
   falls *below* the clean accelerometer-only model (0.781 vs 0.902).
 
-**About the latency number.** ≈0.5 ms is the time to classify a window that
-has already been recorded. Recording the window takes 2.56 s. With 50 %
-overlap a decision can be emitted every 1.28 s, but each decision describes
-the preceding 2.56 s of motion. End-to-end recognition delay is therefore set
-by the windowing scheme, not by the model. Sensor I/O and app scheduling were
-not measured.
+**About the latency number.** ≈0.5 ms is **model-only CPU inference**: the
+forward pass on one window that has already been recorded and standardised.
+It is not end-to-end recognition latency. Each window holds 2.56 s of
+signal, and with the dataset's 50 % overlap a new window completes every
+1.28 s. After an activity changes, the first window made up entirely of the
+new activity therefore completes 2.56–3.84 s later, although the classifier
+may react earlier to partially filled windows. Recognition delay is thus set
+by the windowing scheme, and the ~0.5 ms model time is negligible next to it.
+Sensor I/O, buffering and app scheduling were not measured.
+
+**Scope.** This is inertial-sensor research: a body-worn smartphone's
+accelerometer and gyroscope. It involves no cameras, video or pose
+estimation, and its numbers should not be read as evidence about
+camera-based motion tracking.
 
 ## Architecture overview
 
@@ -70,9 +79,13 @@ UCI archive ──► SHA-256 check ──► nested-ZIP extraction (whitelisted
 | Logistic regression (scikit-learn, lbfgs, L2) | standardised window flattened to 128·C features | linear; `C` chosen on validation | 2,310–6,918 |
 | 1D CNN (PyTorch) | standardised window, C × 128 | 3 × [Conv1d → BatchNorm → ReLU] (32/64/64 filters, kernels 7/5/3, max-pool after blocks 1–2) → global avg pool → dropout 0.3 → linear | 23,910–25,254 |
 
-The logistic regression can use static orientation (gravity) but is not
-time-shift invariant, so it cannot represent gait dynamics. It is a deliberate
-lower bound, not a competitive classical baseline. In the CNN, only the first
+The logistic regression gives each (channel, timestep) its own fixed weight.
+It can exploit class differences in mean signal level, such as gravity
+orientation, and waveform patterns that recur at the same position in the
+window. But it has no mechanism to pool over the phase at which a gait cycle
+starts, and as a linear score it cannot compute nonlinear summaries such as
+signal energy or dominant frequency. It is a deliberate lower bound, not a
+competitive classical baseline. A feature-based classical model was not run. In the CNN, only the first
 layer depends on the number of input channels, so sensor conditions differ in
 their input and nothing else.
 
@@ -170,8 +183,9 @@ conditions are smaller than the run-to-run spread of identical architectures
 
 <p align="center"><img src="results/figures/confusion_cnn.png" width="820" alt="Row-normalised CNN confusion matrices for acc, gyro and acc+gyro"></p>
 
-The gyroscope-only model cannot separate laying from sitting and standing:
-without gravity, it has no orientation cue. Every accelerometer model's main
+The gyroscope-only model largely fails to separate laying from sitting and
+standing (laying recall 0.59). A gyroscope measures rotation rate, so a
+stationary posture gives it no direct gravity-orientation cue. Every accelerometer model's main
 error is sitting ↔ standing.
 
 <p align="center"><img src="results/figures/robustness_cnn.png" width="820" alt="CNN macro-F1 under test-time Gaussian noise on all, accelerometer-only or gyroscope-only channels"></p>
